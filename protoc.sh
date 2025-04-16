@@ -12,6 +12,10 @@ git fetch --all && git checkout main
 sudo apt-get install -y protobuf-compiler golang-goprotobuf-dev
 go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+
+# Create output directory if it doesn't exist
+mkdir -p ./golang/${SERVICE_NAME}
+
 protoc --go_out=./golang --go_opt=paths=source_relative \
   --go-grpc_out=./golang --go-grpc_opt=paths=source_relative \
  ./${SERVICE_NAME}/*.proto
