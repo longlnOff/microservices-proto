@@ -5,18 +5,18 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      RUNNER_SCOPE: repo
-      RUNNER_NAME_PREFIX: myrunner
-      LABELS: proto-runner-microservice
-      REPO_URL: https://github.com/longlnOff/microservices-proto
-      EPHEMERAL: 1
-      ACCESS_TOKEN: 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
+      RUNNER_SCOPE: ${RUNNER_SCOPE}
+      RUNNER_NAME_PREFIX: ${RUNNER_NAME_PREFIX}
+      LABELS: ${RUNNER_LABELS}
+      REPO_URL: ${GITHUB_REPO_URL}
+      EPHEMERAL: ${RUNNER_EPHEMERAL}
+      ACCESS_TOKEN: ${GITHUB_ACCESS_TOKEN}
     deploy:
-      replicas: 1
+      replicas: ${RUNNER_REPLICAS}
       resources:
         limits:
-          cpus: '1'
-          memory: 1G
+          cpus: '${RUNNER_CPU_LIMIT}'
+          memory: ${RUNNER_MEM_LIMIT}
         reservations:
-          cpus: '0.2'
-          memory: 256M
+          cpus: '${RUNNER_CPU_RESERVATION}'
+          memory: ${RUNNER_MEM_RESERVATION}
