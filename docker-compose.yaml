@@ -5,12 +5,12 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      RUNNER_SCOPE: ${RUNNER_SCOPE}
-      RUNNER_NAME_PREFIX: ${RUNNER_NAME_PREFIX}
-      LABELS: ${RUNNER_LABELS}
-      REPO_URL: ${GITHUB_REPO_URL}
-      EPHEMERAL: ${RUNNER_EPHEMERAL}
-      ACCESS_TOKEN: ${GITHUB_ACCESS_TOKEN}
+      - RUNNER_SCOPE=${RUNNER_SCOPE}
+      - RUNNER_NAME_PREFIX=${RUNNER_NAME_PREFIX}
+      - LABELS=${RUNNER_LABELS}
+      - REPO_URL=${GITHUB_REPO_URL}
+      - EPHEMERAL=${RUNNER_EPHEMERAL}
+      - ACCESS_TOKEN=${GITHUB_ACCESS_TOKEN}
     deploy:
       replicas: ${RUNNER_REPLICAS}
       resources:
