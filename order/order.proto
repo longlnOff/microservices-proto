@@ -12,7 +12,4 @@ message Item {
 message CreateOrderResponse {
  int64 order_id = 1;
 }
-service Order {
- rpc Create(CreateOrderRequest) 
- returns (CreateOrderResponse){}
-}
+
