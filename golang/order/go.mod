@@ -1,4 +1,4 @@
-module github.com/longlnoff/microservices-proto/golang/order
+module github.com/longlnOff/microservices-proto/golang/order
 
 go 1.24.2
 
