@@ -3,6 +3,11 @@ on:
   push:
     tags:
       - "golang/*/v**"
+
+# Add this permissions block
+permissions:
+  contents: write  # This allows the workflow to push to the repository
+
 jobs:
   protoc:
     name: "Generate"
