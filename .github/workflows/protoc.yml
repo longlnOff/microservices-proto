@@ -14,8 +14,9 @@ jobs:
     runs-on: self-hosted
     strategy:
       matrix:
-        service: ["order"]
+        service: ["order", "payment"]
         # service: ["order", "payment", "shipping"]
+
     steps:
       - name: Install Go
         uses: actions/setup-go@v2
