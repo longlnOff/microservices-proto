@@ -2,7 +2,7 @@ name: "Protocol Buffer Go Stubs Generation"
 on:
   push:
     tags:
-      - "golang/*/v**"
+      - "v**"
 
 # Add this permissions block
 permissions:
